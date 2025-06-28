@@ -3,635 +3,757 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITX - Indo-Asia Trade eXchange | Kết nối Thương mại Châu Á</title>
-    <meta name="description" content="ITX - Công ty mới thành lập chuyên cung cấp dịch vụ xuất nhập khẩu và giải pháp thương mại khu vực Đông Nam Á với đội ngũ giàu kinh nghiệm">
+    <title>ITX - Indo-Asia Trade eXchange | Kết nối Thương mại Châu Á | ITXEasy.com</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Indo-Asia Trade eXchange (ITX) chuyên cung cấp dịch vụ xuất nhập khẩu và giải pháp thương mại khu vực tại Đông Nam Á, đặc biệt từ Việt Nam ra thế giới. Truy cập ITXEasy.com để kết nối thị trường và nhận tư vấn hiệu quả qua số điện thoại +84775568646.">
+    <meta name="keywords" content="xuất khẩu Việt Nam, nhập khẩu Đông Nam Á, dịch vụ thương mại quốc tế, ITX, Indo-Asia Trade eXchange, xuất nhập khẩu, giải pháp thương mại, nông sản, thủy sản, thủ công mỹ nghệ, ITXEasy.com, +84775568646">
+    <link rel="canonical" href="https://www.itxeasy.com/"> 
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="ITX - Indo-Asia Trade eXchange | Kết nối Thương mại Châu Á | ITXEasy.com">
+    <meta property="og:description" content="ITX chuyên cung cấp dịch vụ xuất nhập khẩu và giải pháp thương mại khu vực tại Đông Nam Á, đặc biệt từ Việt Nam ra thế giới. Liên hệ +84775568646.">
+    <meta property="og:image" content="https://placehold.co/1200x630/4f46e5/ffffff?text=ITX+Trade+Exchange"> 
+    <meta property="og:url" content="https://www.itxeasy.com/"> 
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Indo-Asia Trade eXchange (ITX)">
+    <meta property="og:locale" content="vi_VN">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@ITXEasy"> 
+    <meta name="twitter:title" content="ITX - Indo-Asia Trade eXchange | Kết nối Thương mại Châu Á | ITXEasy.com">
+    <meta name="twitter:description" content="ITX chuyên cung cấp dịch vụ xuất nhập khẩu và giải pháp thương mại khu vực tại Đông Nam Á, đặc biệt từ Việt Nam ra thế giới. Liên hệ +84775568646.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/4f46e5/ffffff?text=ITX+Trade+Exchange"> 
+
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #f97316 100%); }
-        .card-shadow { box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .product-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
-        .stats-number { font-size: 2.5rem; font-weight: 700; }
-        .section-padding { padding: 80px 0; }
-        .chart-container { position: relative; height: 400px; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #f97316 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(30, 64, 175, 0.8), rgba(59, 130, 246, 0.8)), url('https://economyglobal.com/wp-content/uploads/2024/08/Vietnam-maritime.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .animate-counter {
+            animation: countUp 2s ease-out;
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .flag-en::before {
+            content: "🇺🇸";
+            margin-right: 8px;
+        }
+        .flag-vn::before {
+            content: "🇻🇳";
+            margin-right: 8px;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center">
-                    <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
-                        <i class="fas fa-ship text-xl"></i>
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">ITX</span>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold text-gray-800">ITX</h1>
-                        <p class="text-sm text-gray-600">Indo-Asia Trade eXchange</p>
-                    </div>
-                </div>
-                
-                <!-- Language Switcher -->
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <button class="px-3 py-1 bg-blue-600 text-white rounded">VI</button>
-                        <button class="px-3 py-1 text-blue-600 border border-blue-600 rounded hover:bg-blue-600 hover:text-white">EN</button>
+                        <h1 class="text-xl font-bold text-gray-800">Indo-Asia Trade eXchange</h1>
+                        <p class="text-sm text-blue-600 font-medium">Bridging Asia's Trade</p>
                     </div>
                 </div>
                 
                 <!-- Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Trang chủ</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">Về chúng tôi</a>
-                    <a href="#products" class="text-gray-700 hover:text-blue-600 font-medium">Sản phẩm</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Dịch vụ</a>
-                    <a href="#statistics" class="text-gray-700 hover:text-blue-600 font-medium">Thống kê</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Liên hệ</a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition">Trang chủ</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition">Về chúng tôi</a>
+                    <a href="#products" class="text-gray-700 hover:text-blue-600 font-medium transition">Sản phẩm</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition">Dịch vụ</a>
+                    <a href="#statistics" class="text-gray-700 hover:text-blue-600 font-medium transition">Thống kê</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition">Liên hệ</a>
                 </nav>
+                
+                <!-- Language Toggle -->
+                <div class="flex items-center space-x-2">
+                    <a href="index-en.html" class="flag-en px-3 py-2 text-sm font-medium text-gray-600 hover:text-blue-600 rounded-lg border border-gray-300">EN</a>
+                    <button class="flag-vn px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg">VI</button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg text-white section-padding">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-5xl font-bold mb-6">Kết nối Thương mại Châu Á</h2>
-                    <p class="text-xl mb-8 opacity-90">ITX - Công ty mới thành lập với đội ngũ chuyên gia giàu kinh nghiệm, chuyên cung cấp dịch vụ xuất nhập khẩu và giải pháp thương mại hiệu quả từ Đông Nam Á ra thế giới.</p>
-                    <div class="flex space-x-4">
-                        <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                            Khám phá sản phẩm
-                        </button>
-                        <button class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
-                            Liên hệ ngay
-                        </button>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <img src="https://economyglobal.com/wp-content/uploads/2024/08/Vietnam-maritime.jpg" alt="Vietnam Maritime Trade" class="rounded-lg shadow-2xl w-full">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Stats -->
-    <section class="bg-white py-16">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="stats-number text-blue-600">$405.53B</div>
-                    <p class="text-gray-600 font-medium">Tổng xuất khẩu VN 2024</p>
-                </div>
-                <div>
-                    <div class="stats-number text-orange-500">$62.5B</div>
-                    <p class="text-gray-600 font-medium">Xuất khẩu nông sản</p>
-                </div>
-                <div>
-                    <div class="stats-number text-green-600">18.7%</div>
-                    <p class="text-gray-600 font-medium">Tăng trưởng nông sản</p>
-                </div>
-                <div>
-                    <div class="stats-number text-purple-600">200+</div>
-                    <p class="text-gray-600 font-medium">Thị trường xuất khẩu</p>
+    <section id="home" class="hero-bg min-h-screen flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Kết nối Thương mại Châu Á
+                </h1>
+                <p class="text-xl lg:text-2xl mb-8 leading-relaxed opacity-90">
+                    Công ty mới thành lập với đội ngũ chuyên gia giàu kinh nghiệm, kết nối thị trường Đông Nam Á ra thế giới thông qua các dịch vụ thương mại quốc tế hiệu quả, đáng tin cậy và sáng tạo.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#about" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Tìm hiểu thêm
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold py-4 px-8 rounded-lg text-lg transition-all">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Bắt đầu ngay
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us -->
-    <section id="about" class="section-padding bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Về Indo-Asia Trade eXchange</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Công ty mới thành lập với tầm nhìn xa và đội ngũ chuyên gia dày dạn kinh nghiệm</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="https://www.vietnam-briefing.com/news/wp-content/uploads/2022/05/Shipping.jpg" alt="Vietnam Shipping Industry" class="rounded-lg shadow-lg w-full">
+    <!-- Statistics Banner -->
+    <section class="bg-gradient-to-r from-blue-800 to-blue-600 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white">
+                <div class="animate-counter">
+                    <div class="text-4xl font-bold mb-2">$405.5B</div>
+                    <div class="text-lg opacity-90">Xuất khẩu Việt Nam 2024</div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Khởi đầu mới, Kinh nghiệm sâu</h3>
-                    <p class="text-gray-600 mb-6">ITX là công ty mới được thành lập với sứ mệnh kết nối thương mại khu vực Đông Nam Á. Mặc dù là một doanh nghiệp mới, chúng tôi tự hào sở hữu đội ngũ chuyên gia có nhiều năm kinh nghiệm làm việc tại các công ty xuất nhập khẩu hàng đầu trong khu vực.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Đội ngũ kinh nghiệm</h4>
-                                <p class="text-gray-600">Các chuyên gia với 10+ năm kinh nghiệm từ các công ty xuất nhập khẩu uy tín</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Tầm nhìn hiện đại</h4>
-                                <p class="text-gray-600">Áp dụng công nghệ và quy trình tiên tiến trong thương mại quốc tế</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Cam kết chất lượng</h4>
-                                <p class="text-gray-600">Dịch vụ chuyên nghiệp, đáng tin cậy và hiệu quả cao</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="animate-counter">
+                    <div class="text-4xl font-bold mb-2">$62.5B</div>
+                    <div class="text-lg opacity-90">Xuất khẩu Nông sản</div>
                 </div>
-            </div>
-
-            <!-- Mission, Vision, Values -->
-            <div class="grid md:grid-cols-3 gap-8 mt-16">
-                <div class="text-center p-8 bg-white rounded-lg card-shadow">
-                    <i class="fas fa-eye text-blue-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Tầm nhìn</h3>
-                    <p class="text-gray-600">Trở thành cầu nối thương mại hàng đầu kết nối Đông Nam Á với thế giới, tận dụng vị thế chiến lược của Việt Nam để tạo ra giá trị vượt trội.</p>
+                <div class="animate-counter">
+                    <div class="text-4xl font-bold mb-2">200+</div>
+                    <div class="text-lg opacity-90">Thị trường xuất khẩu</div>
                 </div>
-                <div class="text-center p-8 bg-white rounded-lg card-shadow">
-                    <i class="fas fa-bullseye text-orange-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Sứ mệnh</h3>
-                    <p class="text-gray-600">Thúc đẩy quá trình lưu thông hàng hóa và dịch vụ một cách liền mạch, mang đến dịch vụ thương mại quốc tế hiệu quả và đáng tin cậy.</p>
-                </div>
-                <div class="text-center p-8 bg-white rounded-lg card-shadow">
-                    <i class="fas fa-heart text-red-500 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Giá trị cốt lõi</h3>
-                    <p class="text-gray-600">Chuyên nghiệp - Tận tâm - Trách nhiệm. Chúng tôi đặt sự hài lòng của khách hàng làm trọng tâm trong mọi hoạt động.</p>
+                <div class="animate-counter">
+                    <div class="text-4xl font-bold mb-2">15+</div>
+                    <div class="text-lg opacity-90">Năm kinh nghiệm đội ngũ</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Export Products -->
-    <section id="products" class="section-padding bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Sản phẩm xuất khẩu</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Đa dạng sản phẩm chất lượng cao từ Việt Nam và khu vực Đông Nam Á</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Agricultural Products -->
-                <div class="product-card bg-white rounded-lg card-shadow p-6">
-                    <img src="https://www.viettonkinconsulting.com/wp-content/uploads/2022/07/unnamed-file.png" alt="Vietnam Agricultural Products" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Nông sản</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li><i class="fas fa-coffee text-brown-600 mr-2"></i>Cà phê (Hạng 2 thế giới)</li>
-                        <li><i class="fas fa-seedling text-green-600 mr-2"></i>Gạo cao cấp</li>
-                        <li><i class="fas fa-leaf text-green-600 mr-2"></i>Hạt điều, hạt tiêu</li>
-                        <li><i class="fas fa-apple-alt text-orange-500 mr-2"></i>Trái cây nhiệt đới</li>
-                    </ul>
-                    <div class="mt-4 text-sm text-blue-600 font-semibold">$62.5B xuất khẩu 2024 (+18.7%)</div>
-                </div>
-
-                <!-- Electronics -->
-                <div class="product-card bg-white rounded-lg card-shadow p-6">
-                    <img src="https://cdn.prod.website-files.com/64ef6bac7b8ca0e71e05ec87/65691d496c73ea3ca98762d0_Webflow%20(2).png" alt="Electronics Export" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Điện tử</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li><i class="fas fa-mobile-alt text-blue-600 mr-2"></i>Điện thoại và phụ kiện</li>
-                        <li><i class="fas fa-laptop text-gray-600 mr-2"></i>Máy tính và linh kiện</li>
-                        <li><i class="fas fa-microchip text-purple-600 mr-2"></i>Linh kiện điện tử</li>
-                        <li><i class="fas fa-tv text-black mr-2"></i>Thiết bị gia dụng</li>
-                    </ul>
-                    <div class="mt-4 text-sm text-blue-600 font-semibold">$128.53B xuất khẩu 2024 (+26.6%)</div>
-                </div>
-
-                <!-- Textiles -->
-                <div class="product-card bg-white rounded-lg card-shadow p-6">
-                    <div class="w-full h-48 bg-gradient-to-br from-pink-400 to-purple-500 rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-tshirt text-white text-6xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Dệt may</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li><i class="fas fa-tshirt text-blue-600 mr-2"></i>Quần áo thời trang</li>
-                        <li><i class="fas fa-shoe-prints text-brown-600 mr-2"></i>Giày dép da</li>
-                        <li><i class="fas fa-shopping-bag text-green-600 mr-2"></i>Túi xách, phụ kiện</li>
-                        <li><i class="fas fa-cut text-gray-600 mr-2"></i>Vải và sợi</li>
-                    </ul>
-                    <div class="mt-4 text-sm text-blue-600 font-semibold">$37.57B xuất khẩu 2024</div>
-                </div>
-
-                <!-- Processed Foods -->
-                <div class="product-card bg-white rounded-lg card-shadow p-6">
-                    <img src="https://image.sggp.org.vn/w1000/Uploaded/2025/bhgkqzbtgazs/2024_05_02/export-6228.jpg" alt="Vietnamese Food Exports" class="w-full h-48 object-cover rounded-lg mb-4">
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Thực phẩm chế biến</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li><i class="fas fa-fish text-blue-600 mr-2"></i>Thủy hải sản</li>
-                        <li><i class="fas fa-glass-martini text-orange-500 mr-2"></i>Đồ uống chế biến</li>
-                        <li><i class="fas fa-pepper-hot text-red-600 mr-2"></i>Gia vị và condiment</li>
-                        <li><i class="fas fa-cookie-bite text-brown-600 mr-2"></i>Bánh kẹo, snack</li>
-                    </ul>
-                    <div class="mt-4 text-sm text-blue-600 font-semibold">Tăng trưởng ổn định</div>
-                </div>
-
-                <!-- Industrial Products -->
-                <div class="product-card bg-white rounded-lg card-shadow p-6">
-                    <div class="w-full h-48 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-industry text-white text-6xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Sản phẩm công nghiệp</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li><i class="fas fa-cogs text-gray-600 mr-2"></i>Máy móc thiết bị</li>
-                        <li><i class="fas fa-hammer text-brown-600 mr-2"></i>Vật liệu xây dựng</li>
-                        <li><i class="fas fa-oil-can text-black mr-2"></i>Hóa chất công nghiệp</li>
-                        <li><i class="fas fa-tools text-blue-600 mr-2"></i>Dụng cụ, phụ tùng</li>
-                    </ul>
-                    <div class="mt-4 text-sm text-blue-600 font-semibold">$45.75B máy móc thiết bị</div>
-                </div>
-
-                <!-- Furniture & Wood -->
-                <div class="product-card bg-white rounded-lg card-shadow p-6">
-                    <div class="w-full h-48 bg-gradient-to-br from-yellow-600 to-orange-700 rounded-lg mb-4 flex items-center justify-center">
-                        <i class="fas fa-chair text-white text-6xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Gỗ và nội thất</h3>
-                    <ul class="text-gray-600 space-y-2">
-                        <li><i class="fas fa-chair text-brown-600 mr-2"></i>Nội thất gỗ</li>
-                        <li><i class="fas fa-tree text-green-600 mr-2"></i>Gỗ xuất khẩu</li>
-                        <li><i class="fas fa-home text-blue-600 mr-2"></i>Đồ trang trí</li>
-                        <li><i class="fas fa-cut text-gray-600 mr-2"></i>Sản phẩm thủ công</li>
-                    </ul>
-                    <div class="mt-4 text-sm text-blue-600 font-semibold">Thị trường EU, Mỹ</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="section-padding bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Dịch vụ của chúng tôi</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Giải pháp thương mại toàn diện từ đội ngũ chuyên gia giàu kinh nghiệm</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-8 bg-white rounded-lg card-shadow">
-                    <i class="fas fa-shipping-fast text-blue-600 text-5xl mb-6"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Xuất nhập khẩu & Logistics</h3>
-                    <p class="text-gray-600">Dịch vụ vận chuyển quốc tế, kho bãi, và quản lý chuỗi cung ứng hiệu quả từ Đông Nam Á đi toàn thế giới.</p>
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">Về Indo-Asia Trade eXchange</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Một công ty mới thành lập được dẫn dắt bởi các chuyên gia dày dạn kinh nghiệm với hàng thập kỷ kinh nghiệm tổng hợp trong thương mại Đông Nam Á
+                    </p>
                 </div>
                 
-                <div class="text-center p-8 bg-white rounded-lg card-shadow">
-                    <i class="fas fa-handshake text-orange-500 text-5xl mb-6"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Tư vấn thương mại</h3>
-                    <p class="text-gray-600">Tư vấn chuyên sâu về thị trường, quy định, và chiến lược kinh doanh quốc tế dựa trên kinh nghiệm thực tế.</p>
-                </div>
-                
-                <div class="text-center p-8 bg-white rounded-lg card-shadow">
-                    <i class="fas fa-search text-green-600 text-5xl mb-6"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Kiểm tra chất lượng</h3>
-                    <p class="text-gray-600">Dịch vụ kiểm tra, giám sát chất lượng sản phẩm và tuân thủ tiêu chuẩn quốc tế nghiêm ngặt.</p>
-                </div>
-                
-                <div class="text-center p-8 bg-white rounded-lg card-shadow">
-                    <i class="fas fa-file-contract text-purple-600 text-5xl mb-6"></i>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Hỗ trợ pháp lý</h3>
-                    <p class="text-gray-600">Hỗ trợ thủ tục hải quan, giấy tờ xuất nhập khẩu, và tư vấn pháp lý thương mại quốc tế.</p>
-                </div>
-            </div>
-
-            <!-- Additional Services -->
-            <div class="mt-16 bg-white rounded-lg card-shadow p-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Lợi thế cạnh tranh của ITX</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="flex items-start">
-                        <i class="fas fa-users text-blue-600 text-2xl mt-1 mr-4"></i>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">Đội ngũ chuyên gia</h4>
-                            <p class="text-gray-600">Các chuyên viên với hơn 10 năm kinh nghiệm từ các công ty xuất nhập khẩu hàng đầu trong khu vực.</p>
-                        </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <img src="https://cdn.prod.website-files.com/64ef6bac7b8ca0e71e05ec87/65691d496c73ea3ca98762d0_Webflow%20(2).png" 
+                             alt="Logistics Việt Nam" 
+                             class="rounded-2xl shadow-2xl w-full h-auto">
                     </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-network-wired text-orange-500 text-2xl mt-1 mr-4"></i>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">Mạng lưới rộng lớn</h4>
-                            <p class="text-gray-600">Kết nối với hơn 200 thị trường trên toàn thế giới thông qua mạng lưới đối tác chiến lược.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-clock text-green-600 text-2xl mt-1 mr-4"></i>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">Phản hồi nhanh chóng</h4>
-                            <p class="text-gray-600">Cam kết phản hồi mọi yêu cầu trong vòng 8 giờ với dịch vụ khách hàng 24/7.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trade Statistics -->
-    <section id="statistics" class="section-padding bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Thống kê thương mại</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Dữ liệu xuất khẩu Việt Nam và khu vực Đông Nam Á năm 2024</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Export by Category Chart -->
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Xuất khẩu theo ngành (2024)</h3>
-                    <div class="chart-container">
-                        <canvas id="exportChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Top Export Markets -->
-                <div class="bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Thị trường xuất khẩu hàng đầu</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 bg-blue-600 rounded mr-3"></div>
-                                <span class="font-semibold">Hoa Kỳ</span>
-                            </div>
-                            <span class="text-blue-600 font-bold">$136.5B</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 bg-red-600 rounded mr-3"></div>
-                                <span class="font-semibold">Trung Quốc</span>
-                            </div>
-                            <span class="text-red-600 font-bold">$52.1B</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 bg-blue-800 rounded mr-3"></div>
-                                <span class="font-semibold">EU</span>
-                            </div>
-                            <span class="text-blue-800 font-bold">$45.2B</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 bg-green-600 rounded mr-3"></div>
-                                <span class="font-semibold">ASEAN</span>
-                            </div>
-                            <span class="text-green-600 font-bold">$38.7B</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg">
-                            <div class="flex items-center">
-                                <div class="w-8 h-8 bg-orange-600 rounded mr-3"></div>
-                                <span class="font-semibold">Nhật Bản</span>
-                            </div>
-                            <span class="text-orange-600 font-bold">$25.3B</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Statistics -->
-            <div class="mt-16 grid md:grid-cols-4 gap-8 text-center">
-                <div class="p-6 bg-blue-50 rounded-lg">
-                    <i class="fas fa-chart-line text-blue-600 text-3xl mb-4"></i>
-                    <div class="text-2xl font-bold text-blue-600">+15.4%</div>
-                    <p class="text-gray-600 font-medium">Tăng trưởng thương mại 2024</p>
-                </div>
-                <div class="p-6 bg-green-50 rounded-lg">
-                    <i class="fas fa-globe text-green-600 text-3xl mb-4"></i>
-                    <div class="text-2xl font-bold text-green-600">$24.77B</div>
-                    <p class="text-gray-600 font-medium">Thặng dư thương mại</p>
-                </div>
-                <div class="p-6 bg-orange-50 rounded-lg">
-                    <i class="fas fa-ship text-orange-600 text-3xl mb-4"></i>
-                    <div class="text-2xl font-bold text-orange-600">16.9M</div>
-                    <p class="text-gray-600 font-medium">TEUs container (7 tháng đầu)</p>
-                </div>
-                <div class="p-6 bg-purple-50 rounded-lg">
-                    <i class="fas fa-handshake text-purple-600 text-3xl mb-4"></i>
-                    <div class="text-2xl font-bold text-purple-600">200+</div>
-                    <p class="text-gray-600 font-medium">Quốc gia đối tác</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section-padding bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Liên hệ với chúng tôi</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Kết nối với ITX để khám phá cơ hội thương mại xuất khẩu từ Đông Nam Á</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Information -->
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Thông tin liên hệ</h3>
                     <div class="space-y-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-blue-600 text-xl mt-1 mr-4"></i>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-lightbulb text-blue-600 text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Trụ sở chính</h4>
-                                <p class="text-gray-600">Tầng 15, Tòa nhà ITX Center<br>123 Đường Nguyễn Huệ, Quận 1<br>TP. Hồ Chí Minh, Việt Nam</p>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Tầm nhìn của chúng tôi</h3>
+                                <p class="text-gray-600">Trở thành cầu nối đáng tin cậy nhất, kết nối các nhà sản xuất Đông Nam Á với thị trường toàn cầu, tận dụng vị trí chiến lược của Việt Nam và kinh nghiệm sâu rộng của đội ngũ chúng tôi.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone text-blue-600 text-xl mt-1 mr-4"></i>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-target text-orange-600 text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Điện thoại</h4>
-                                <p class="text-gray-600">+84 28 3829 5678<br>+84 901 234 567 (Hotline 24/7)</p>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Sứ mệnh của chúng tôi</h3>
+                                <p class="text-gray-600">Tạo điều kiện thuận lợi cho thương mại quốc tế liền mạch bằng cách cung cấp các giải pháp hiệu quả, đáng tin cậy và sáng tạo, tạo ra giá trị vượt trội cho các đối tác và khách hàng trên toàn thế giới.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-blue-600 text-xl mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Email</h4>
-                                <p class="text-gray-600">info@itx-asia.com<br>export@itx-asia.com</p>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-green-600 text-xl"></i>
                             </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-clock text-blue-600 text-xl mt-1 mr-4"></i>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Giờ làm việc</h4>
-                                <p class="text-gray-600">Thứ 2 - Thứ 6: 8:00 - 17:30<br>Thứ 7: 8:00 - 12:00<br>Chủ nhật: Nghỉ</p>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Kinh nghiệm của chúng tôi</h3>
+                                <p class="text-gray-600">Mặc dù mới thành lập, đội ngũ của chúng tôi tập hợp các chuyên gia có 10-20 năm kinh nghiệm từ các công ty xuất nhập khẩu hàng đầu trên khắp Đông Nam Á.</p>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Media -->
-                    <div class="mt-8">
-                        <h4 class="font-semibold text-gray-800 mb-4">Kết nối với chúng tôi</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 transition">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="#" class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition">
-                                <i class="fas fa-envelope"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="bg-white p-8 rounded-lg card-shadow">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Gửi yêu cầu tư vấn</h3>
-                    <form>
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Họ và tên *</label>
-                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                <!-- Core Values -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl card-hover">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Chuyên nghiệp</h3>
+                        <p class="text-gray-600">Cung cấp các tiêu chuẩn dịch vụ đẳng cấp thế giới với chuyên môn và thực tiễn tốt nhất trong ngành.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl card-hover">
+                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Tận tâm</h3>
+                        <p class="text-gray-600">Cam kết thực hiện các hoạt động kinh doanh có đạo đức và mối quan hệ thương mại bền vững.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl card-hover">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Trách nhiệm</h3>
+                        <p class="text-gray-600">Chịu trách nhiệm cho mọi giao dịch và đảm bảo sự hài lòng của khách hàng là ưu tiên hàng đầu của chúng tôi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">Sản phẩm xuất khẩu</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Kết nối các sản phẩm tốt nhất của Việt Nam với thị trường toàn cầu thông qua mạng lưới rộng khắp và chuyên môn của chúng tôi
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <img src="https://www.viettonkinconsulting.com/wp-content/uploads/2022/07/unnamed-file.png" 
+                             alt="Sản phẩm nông nghiệp Việt Nam" 
+                             class="rounded-2xl shadow-2xl w-full h-auto">
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Sản phẩm nông nghiệp cao cấp</h3>
+                            <p class="text-gray-600 mb-6">Di sản nông nghiệp phong phú của Việt Nam tạo ra một số sản phẩm nông nghiệp tốt nhất thế giới, và chúng tôi tự hào đưa chúng ra thị trường toàn cầu.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-coffee text-orange-600 text-xl"></i>
+                                <span class="font-medium">Cà phê cao cấp</span>
                             </div>
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Công ty</label>
-                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-seedling text-green-600 text-xl"></i>
+                                <span class="font-medium">Gạo Jasmine</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-leaf text-amber-600 text-xl"></i>
+                                <span class="font-medium">Hạt tiêu đen</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-apple-alt text-red-600 text-xl"></i>
+                                <span class="font-medium">Trái cây nhiệt đới</span>
                             </div>
                         </div>
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Email *</label>
-                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                    </div>
+                </div>
+
+                <!-- Product Categories -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Electronics -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-microchip text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Điện tử</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Điện thoại thông minh & Phụ kiện</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Linh kiện máy tính</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Linh kiện điện tử</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Điện tử tiêu dùng</li>
+                        </ul>
+                        <div class="mt-6 text-sm font-medium text-blue-600">Xuất khẩu $128.53B trong 2024</div>
+                    </div>
+
+                    <!-- Textiles -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-tshirt text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Dệt may & May mặc</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Quần áo & Trang phục</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Giày dép</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Túi xách & Phụ kiện</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Vải gia dụng</li>
+                        </ul>
+                        <div class="mt-6 text-sm font-medium text-blue-600">Xuất khẩu $37.57B trong 2024</div>
+                    </div>
+
+                    <!-- Agricultural -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-leaf text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Nông nghiệp</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Hạt cà phê</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Gạo & Ngũ cốc</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Hạt điều & Các loại hạt</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Gia vị & Thảo mộc</li>
+                        </ul>
+                        <div class="mt-6 text-sm font-medium text-blue-600">Xuất khẩu $62.5B trong 2024</div>
+                    </div>
+
+                    <!-- Processed Foods -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+                            <i class="fas fa-fish text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Thực phẩm chế biến</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Sản phẩm hải sản</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Đồ uống</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Gia vị & Nước sốt</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Thực phẩm đông lạnh</li>
+                        </ul>
+                        <div class="mt-6 text-sm font-medium text-blue-600">Phân khúc thị trường đang tăng trưởng</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">Dịch vụ của chúng tôi</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Giải pháp thương mại toàn diện được hỗ trợ bởi nhiều năm kinh nghiệm và kiến thức thị trường sâu sắc
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shipping-fast text-blue-600 text-xl"></i>
                             </div>
                             <div>
-                                <label class="block text-gray-700 font-medium mb-2">Điện thoại *</label>
-                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" required>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Xuất nhập khẩu & Logistics</h3>
+                                <p class="text-gray-600">Giải pháp logistics từ đầu đến cuối bao gồm kho bãi, vận chuyển, thông quan và giao hàng chặng cuối trên các thị trường toàn cầu.</p>
                             </div>
                         </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 font-medium mb-2">Sản phẩm quan tâm</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600">
-                                <option>Chọn sản phẩm...</option>
-                                <option>Nông sản (Cà phê, gạo, hạt điều...)</option>
-                                <option>Điện tử (Điện thoại, máy tính...)</option>
-                                <option>Dệt may (Quần áo, giày dép...)</option>
-                                <option>Thực phẩm chế biến</option>
-                                <option>Sản phẩm công nghiệp</option>
-                                <option>Gỗ và nội thất</option>
-                                <option>Khác</option>
-                            </select>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Tư vấn thương mại quốc tế</h3>
+                                <p class="text-gray-600">Phân tích thị trường chiến lược, tối ưu hóa tuyến đường thương mại và hỗ trợ phát triển kinh doanh để tối đa hóa tiềm năng thương mại quốc tế của bạn.</p>
+                            </div>
                         </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-medium mb-2">Nội dung yêu cầu *</label>
-                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" placeholder="Mô tả chi tiết yêu cầu của bạn..." required></textarea>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-certificate text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Đảm bảo chất lượng & Kiểm tra</h3>
+                                <p class="text-gray-600">Quy trình kiểm soát chất lượng nghiêm ngặt, kiểm tra của bên thứ ba và xác minh tuân thủ để đảm bảo sản phẩm đáp ứng các tiêu chuẩn quốc tế.</p>
+                            </div>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                            Gửi yêu cầu
-                        </button>
-                    </form>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-file-contract text-orange-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Hỗ trợ pháp lý & Chứng từ</h3>
+                                <p class="text-gray-600">Xử lý chứng từ hoàn chỉnh, tuân thủ quy định và hỗ trợ pháp lý cho các giao dịch quốc tế suôn sẻ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <img src="https://www.vietnam-briefing.com/news/wp-content/uploads/2022/05/Shipping.jpg" 
+                             alt="Dịch vụ vận chuyển Việt Nam" 
+                             class="rounded-2xl shadow-2xl w-full h-auto">
+                    </div>
+                </div>
+
+                <!-- Service Features -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Phản hồi nhanh chóng</h3>
+                        <p class="text-gray-600">Chúng tôi phản hồi mọi yêu cầu trong vòng 8 giờ, đảm bảo thời gian quay vòng nhanh chóng cho nhu cầu kinh doanh của bạn.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                        <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-check text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Đảm bảo chất lượng</h3>
+                        <p class="text-gray-600">Kiểm soát chất lượng toàn diện và bồi thường cho bất kỳ tổn thất nào do sự sơ suất hoặc sai sót của chúng tôi.</p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-gray-50 rounded-2xl">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Hỗ trợ 24/7</h3>
+                        <p class="text-gray-600">Hỗ trợ khách hàng và dịch vụ hậu mãi 24/7 để đảm bảo sự hài lòng tuyệt đối của bạn.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">Thống kê thương mại</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Hiệu suất xuất khẩu đáng kể của Việt Nam cho thấy cơ hội to lớn trong thương mại Đông Nam Á
+                    </p>
+                </div>
+
+                <!-- Key Statistics Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">$405.5B</div>
+                        <div class="text-gray-600 font-medium">Tổng xuất khẩu Việt Nam 2024</div>
+                        <div class="text-sm text-green-600 mt-2">+15.4% so với cùng kỳ</div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="text-4xl font-bold text-green-600 mb-2">$62.5B</div>
+                        <div class="text-lg opacity-90">Xuất khẩu nông sản</div>
+                        <div class="text-sm text-green-600 mt-2">+18.7% so với cùng kỳ</div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">$128.5B</div>
+                        <div class="text-lg opacity-90">Xuất khẩu điện tử</div>
+                        <div class="text-sm text-green-600 mt-2">+26.6% so với cùng kỳ</div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center">
+                        <div class="text-4xl font-bold text-orange-600 mb-2">$24.8B</div>
+                        <div class="text-lg opacity-90">Thặng dư thương mại</div>
+                        <div class="text-sm text-blue-600 mt-2">Hiệu suất mạnh mẽ</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Export by Categories Chart -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Xuất khẩu Việt Nam theo danh mục (2024)</h3>
+                        <div style="height: 400px;">
+                            <canvas id="exportsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Export Markets Chart -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Các thị trường xuất khẩu hàng đầu</h3>
+                        <div style="height: 400px;">
+                            <canvas id="marketsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Insights -->
+                <div class="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <i class="fas fa-globe-americas text-4xl mb-4 opacity-80"></i>
+                            <h3 class="text-xl font-bold mb-2">Tiếp cận toàn cầu</h3>
+                            <p class="opacity-90">Việt Nam xuất khẩu sang hơn 200 quốc gia và vùng lãnh thổ trên toàn thế giới</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-chart-growth text-4xl mb-4 opacity-80"></i>
+                            <h3 class="text-xl font-bold mb-2">Thị trường tăng trưởng</h3>
+                            <p class="opacity-90">ASEAN, EU và Mỹ vẫn là những điểm đến hàng đầu cho các sản phẩm của Việt Nam</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-award text-4xl mb-4 opacity-80"></i>
+                            <h3 class="text-xl font-bold mb-2">Công nhận chất lượng</h3>
+                            <p class="opacity-90">Các sản phẩm Việt Nam đang được công nhận về chất lượng và giá trị</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">Liên hệ với chúng tôi</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Bạn đã sẵn sàng mở rộng kinh doanh toàn cầu? Hãy để đội ngũ giàu kinh nghiệm của chúng tôi giúp bạn nắm bắt các cơ hội thương mại quốc tế.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Liên hệ</h3>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Họ và tên *</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Họ và tên của bạn">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="email của bạn">
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Công ty</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tên công ty của bạn">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Điện thoại</label>
+                                    <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+84775568646">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Dịch vụ quan tâm</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>Chọn dịch vụ...</option>
+                                    <option>Dịch vụ xuất nhập khẩu</option>
+                                    <option>Tư vấn thương mại</option>
+                                    <option>Đảm bảo chất lượng</option>
+                                    <option>Hỗ trợ pháp lý & Chứng từ</option>
+                                    <option>Khác</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Tin nhắn *</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Kể cho chúng tôi về dự án hoặc yêu cầu của bạn..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Gửi tin nhắn
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Văn phòng của chúng tôi</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Trụ sở chính</h4>
+                                        <p class="text-gray-600">
+                                            Quận 1, TP. Hồ Chí Minh<br>
+                                            Việt Nam
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-green-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Điện thoại</h4>
+                                        <p class="text-gray-600">+84775568646</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                        <p class="text-gray-600">info@itxeasy.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-orange-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800 mb-1">Giờ làm việc</h4>
+                                        <p class="text-gray-600">
+                                            Thứ Hai - Thứ Sáu: 8:00 AM - 6:00 PM<br>
+                                            Thứ Bảy: 8:00 AM - 12:00 PM (ICT)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Why Choose Us -->
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Tại sao chọn ITX?</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    Đội ngũ giàu kinh nghiệm từ các công ty thương mại hàng đầu
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    Đảm bảo phản hồi trong vòng 8 giờ
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    Chính sách đảm bảo chất lượng và bồi thường
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    Hỗ trợ hậu mãi toàn diện
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    Vị trí chiến lược tại TP. Hồ Chí Minh
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white section-padding">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
-                            <i class="fas fa-ship text-xl"></i>
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-4 gap-8 mb-12">
+                    <!-- Company Info -->
+                    <div class="lg:col-span-2">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-xl">ITX</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Indo-Asia Trade eXchange</h3>
+                                <p class="text-blue-400 font-medium">Kết nối Thương mại Châu Á</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-bold">ITX</h3>
-                            <p class="text-sm text-gray-400">Indo-Asia Trade eXchange</p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Một công ty mới thành lập với đội ngũ chuyên gia giàu kinh nghiệm chuyên về dịch vụ xuất nhập khẩu và giải pháp thương mại khu vực trên khắp Đông Nam Á. Chúng tôi tận dụng vị thế chiến lược của Việt Nam để tạo ra giá trị vượt trội cho các đối tác toàn cầu.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-linkedin text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
                         </div>
                     </div>
-                    <p class="text-gray-400 mb-4">Kết nối thương mại Đông Nam Á với thế giới. Công ty mới thành lập với đội ngũ chuyên gia giàu kinh nghiệm.</p>
-                    <p class="text-sm text-gray-500">"Bridging Asia's Trade"</p>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Liên kết nhanh</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#about" class="text-gray-300 hover:text-white transition">Về chúng tôi</a></li>
+                            <li><a href="#products" class="text-gray-300 hover:text-white transition">Sản phẩm xuất khẩu</a></li>
+                            <li><a href="#services" class="text-gray-300 hover:text-white transition">Dịch vụ của chúng tôi</a></li>
+                            <li><a href="#statistics" class="text-gray-300 hover:text-white transition">Thống kê thương mại</a></li>
+                            <li><a href="#contact" class="text-gray-300 hover:text-white transition">Liên hệ</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Thông tin liên hệ</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-map-marker-alt text-blue-400"></i>
+                                <span class="text-gray-300">TP. Hồ Chí Minh, Việt Nam</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                                <span class="text-gray-300">info@itxeasy.com</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-phone text-blue-400"></i>
+                                <span class="text-gray-300">+84775568646</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Sản phẩm</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Nông sản</a></li>
-                        <li><a href="#" class="hover:text-white transition">Điện tử</a></li>
-                        <li><a href="#" class="hover:text-white transition">Dệt may</a></li>
-                        <li><a href="#" class="hover:text-white transition">Thực phẩm chế biến</a></li>
-                        <li><a href="#" class="hover:text-white transition">Sản phẩm công nghiệp</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Dịch vụ</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Xuất nhập khẩu</a></li>
-                        <li><a href="#" class="hover:text-white transition">Logistics</a></li>
-                        <li><a href="#" class="hover:text-white transition">Tư vấn thương mại</a></li>
-                        <li><a href="#" class="hover:text-white transition">Kiểm tra chất lượng</a></li>
-                        <li><a href="#" class="hover:text-white transition">Hỗ trợ pháp lý</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Liên hệ</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-map-marker-alt mr-2"></i>TP. Hồ Chí Minh, Việt Nam</li>
-                        <li><i class="fas fa-phone mr-2"></i>+84 28 3829 5678</li>
-                        <li><i class="fas fa-envelope mr-2"></i>info@itx-asia.com</li>
-                        <li><i class="fas fa-clock mr-2"></i>24/7 Hotline Support</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <hr class="border-gray-700 my-8">
-            
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2024 Indo-Asia Trade eXchange (ITX). All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Chính sách bảo mật</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Điều khoản sử dụng</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Sitemap</a>
+
+                <!-- Bottom Bar -->
+                <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2024 Indo-Asia Trade eXchange (ITX). Đã đăng ký bản quyền.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-white transition">Chính sách bảo mật</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">Điều khoản dịch vụ</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">Chính sách Cookie</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Chart.js Script -->
+    <!-- JavaScript -->
     <script>
-        // Export by Category Chart
-        const ctx = document.getElementById('exportChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Điện tử', 'Nông sản', 'Dệt may', 'Máy móc', 'Giày dép', 'Khác'],
-                datasets: [{
-                    data: [128.53, 62.5, 37.57, 45.75, 23.90, 107.28],
-                    backgroundColor: [
-                        '#3B82F6',
-                        '#10B981',
-                        '#F59E0B',
-                        '#8B5CF6',
-                        '#EF4444',
-                        '#6B7280'
-                    ],
-                    borderWidth: 2,
-                    borderColor: '#fff'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            padding: 20,
-                            usePointStyle: true
-                        }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.label + ': $' + context.parsed + 'B';
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -646,18 +768,104 @@
             });
         });
 
-        // Language switcher functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const viBtn = document.querySelector('button:contains("VI")');
-            const enBtn = document.querySelector('button:contains("EN")');
-            
-            // Simple language toggle (would need full implementation for real site)
-            if (enBtn) {
-                enBtn.addEventListener('click', function() {
-                    alert('English version would be loaded here');
-                });
-            }
+        // Charts
+        window.addEventListener('load', function() {
+            // Exports by Category Chart
+            const exportsCtx = document.getElementById('exportsChart').getContext('2d');
+            new Chart(exportsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Điện tử', 'Nông sản', 'Dệt may', 'Máy móc', 'Khác'],
+                    datasets: [{
+                        data: [128.5, 62.5, 37.6, 45.8, 131.1],
+                        backgroundColor: [
+                            '#3B82F6',
+                            '#10B981',
+                            '#8B5CF6',
+                            '#F59E0B',
+                            '#6B7280'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': $' + context.parsed + 'B';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Top Export Markets Chart
+            const marketsCtx = document.getElementById('marketsChart').getContext('2d');
+            new Chart(marketsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Hoa Kỳ', 'Trung Quốc', 'Nhật Bản', 'Hàn Quốc', 'Đức', 'Singapore'],
+                    datasets: [{
+                        label: 'Giá trị xuất khẩu (Tỷ USD)',
+                        data: [149.6, 85.3, 42.7, 28.4, 23.8, 18.9],
+                        backgroundColor: '#3B82F6',
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#F3F4F6'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
         });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.animate-counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        animateCounters();
     </script>
 </body>
 </html>
