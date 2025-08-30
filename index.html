@@ -41,47 +41,9 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .hero-bg {
-            background-image: linear-gradient(rgba(30, 64, 175, 0.8), rgba(59, 130, 246, 0.8)), url('https://economyglobal.com/wp-content/uploads/2024/08/Vietnam-maritime.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        .animate-counter {
-            animation: countUp 2s ease-out;
-        }
-        @keyframes countUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .flag-en::before {
-            content: "🇺🇸";
-            margin-right: 8px;
-        }
-        .flag-vn::before {
-            content: "🇻🇳";
-            margin-right: 8px;
-        }
+
     </style>
 </head>
 
@@ -92,11 +54,12 @@
             <div class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-16 h-12 bg-gradient-to-r rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl"><img src="itxeasy-logo.svg" alt="Indo-Asia Trade eXchange"></span>
+                    <div class="w-48 h-12 bg-gradient-to-r rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl"><img src="itxeasy-logo.svg" alt="Indo-Asia Trade eXchange | Make export easy "></span>
                     </div>
-                    <div>
+                    <div class="outside-top">
                         <h1 class="text-xl font-bold text-gray-800">Indo-Asia Trade eXchange</h1>
+                        <h2 class="text-xl font-bold text-gray-800">Make export easy</h2>
                         <p class="text-sm text-blue-600 font-medium">Bridging Asia's Trade</p>
                     </div>
                 </div>
@@ -685,11 +648,12 @@
                     <!-- Company Info -->
                     <div class="lg:col-span-2">
                         <div class="flex items-center space-x-3 mb-6">
-                            <div class="w-16 h-12 bg-gradient-to-r rounded-lg flex items-center justify-center">
-                                <span class="text-white font-bold text-xl"><img src="itxeasy-logo.svg" alt="Indo-Asia Trade eXchange"></span>
+                            <div class="w-48 h-12 bg-gradient-to-r rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-xl"><img src="itxeasy-logo_footer.svg" alt="Indo-Asia Trade eXchange | Make export easy"></span>
                             </div>
-                            <div>
+                            <div class="outside-top">
                                 <h3 class="text-xl font-bold">Indo-Asia Trade eXchange</h3>
+                                <h4 class="text-xl font-bold text-gray-800">Make export easy</h4>
                                 <p class="text-blue-400 font-medium">Bridging Asia's Trade</p>
                             </div>
                         </div>
